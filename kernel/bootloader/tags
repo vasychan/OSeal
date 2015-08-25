@@ -1,0 +1,37 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC=g++$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS= -c$/;"	m
+_gp	boot_main.cpp	/^struct gdt_ptr _gp;$/;"	v	typeref:struct:gdt_ptr
+_set_gdt	boot.asm	/^_set_gdt:$/;"	l
+access	boot_main.cpp	/^        unsigned char access;$/;"	m	struct:gdt_struct	file:	access:public
+base	boot_main.cpp	/^    unsigned int base;$/;"	m	struct:gdt_ptr	file:	access:public
+base_high	boot_main.cpp	/^        unsigned char base_high;$/;"	m	struct:gdt_struct	file:	access:public
+base_low	boot_main.cpp	/^        unsigned short base_low;$/;"	m	struct:gdt_struct	file:	access:public
+base_middle	boot_main.cpp	/^        unsigned char base_middle;$/;"	m	struct:gdt_struct	file:	access:public
+boot_main	boot_main.cpp	/^void boot_main()$/;"	f	signature:()
+boot_main	main.cpp	/^extern "C++" int boot_main()$/;"	f	signature:()
+gdt	boot_main.cpp	/^struct gdt_struct gdt[3];$/;"	v	typeref:struct:gdt_struct
+gdt_ptr	boot_main.cpp	/^struct gdt_ptr$/;"	s	file:
+gdt_ptr::base	boot_main.cpp	/^    unsigned int base;$/;"	m	struct:gdt_ptr	file:	access:public
+gdt_ptr::limit	boot_main.cpp	/^    unsigned short limit;$/;"	m	struct:gdt_ptr	file:	access:public
+gdt_struct	boot_main.cpp	/^struct gdt_struct$/;"	s	file:
+gdt_struct::access	boot_main.cpp	/^        unsigned char access;$/;"	m	struct:gdt_struct	file:	access:public
+gdt_struct::base_high	boot_main.cpp	/^        unsigned char base_high;$/;"	m	struct:gdt_struct	file:	access:public
+gdt_struct::base_low	boot_main.cpp	/^        unsigned short base_low;$/;"	m	struct:gdt_struct	file:	access:public
+gdt_struct::base_middle	boot_main.cpp	/^        unsigned char base_middle;$/;"	m	struct:gdt_struct	file:	access:public
+gdt_struct::granularity	boot_main.cpp	/^        unsigned char granularity;$/;"	m	struct:gdt_struct	file:	access:public
+gdt_struct::limit_low	boot_main.cpp	/^        unsigned short limit_low;$/;"	m	struct:gdt_struct	file:	access:public
+gdtr	boot.asm	/^gdtr DW 0$/;"	d
+global	boot.asm	/^global main$/;"	l
+granularity	boot_main.cpp	/^        unsigned char granularity;$/;"	m	struct:gdt_struct	file:	access:public
+limit	boot_main.cpp	/^    unsigned short limit;$/;"	m	struct:gdt_ptr	file:	access:public
+limit_low	boot_main.cpp	/^        unsigned short limit_low;$/;"	m	struct:gdt_struct	file:	access:public
+main	boot.asm	/^main:$/;"	l
+section	boot.asm	/^section .data$/;"	l
+section	boot.asm	/^section .text$/;"	l
+set_gdt	boot_main.cpp	/^void set_gdt()$/;"	f	signature:()
