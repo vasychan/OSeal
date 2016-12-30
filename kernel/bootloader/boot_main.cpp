@@ -1,6 +1,7 @@
 
 #include <stdint.h>
 #include <stdio.h>
+/*
 extern "C" 
 void boot_kernel()
 {
@@ -16,7 +17,7 @@ void boot_kernel()
     a[6] = '\n';
 //    printf(a);
 }
-
+*/
 struct gdt_struct
 {
         unsigned short limit_low;
@@ -49,3 +50,5 @@ void set_gdt()
     //gdt_flush((uint32_t)&_gp);
 
 }
+
+

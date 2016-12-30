@@ -2,6 +2,8 @@
 ;-----------------------------------------------------------
 ;---------------------- 32 BIT SEGMENT ---------------------
 ;-----------------------------------------------------------
+
+
 bits 32 
 main_kernel:
     mov ax, DATA_SEG
@@ -14,7 +16,12 @@ main_kernel:
     mov ebp, 0x90000
     mov esp, ebp
     
-    call debug_info 
+    ; ==============================
+    ; MAIN FUNCTION MUST BE WRITE HERE
+    ; ==============================
+
+    call debug_info
+    call vga_mode
     .hang:
         jmp .hang
 
@@ -23,9 +30,7 @@ debug_info:
     ;print_msg hello_msg,hello_msg_lengh
     mov edx, START_MSG
     mov ebx, GREEN 
-    ;call print_msg_32
     mprint_msg_32 START_MSG,GREEN,0xB8500
-    ;mprint_msg_32 START2_MSG,GREEN,0xB8160
 
     ; set cursor
     mov dx,0x14 
@@ -35,13 +40,22 @@ debug_info:
     ;out 0x03D5, ax
     ;out 0x03D5, dx 
 
-
-    ;mprint_msg_32 START2_MSG,GREEN,0xB8630
-    ;mov edx, START2_MSG
-    ;call print_pm2
     ret
 
 START_MSG db "kernel: switch to protected mode: Ok", 0
-START2_MSG db "kernel: ready to obey, master", 0
 
+extern set_vesa_mode
+
+bits 32
+vga_mode:
+    call set_vesa_mode
+    ret
+
+global add 
+add:
+    mov   eax, [esp+4]   ; argument 1
+    add   eax, [esp+8]   ; argument 2
+    ret
+
+START_MSG2 db "kernel: call vesa mode", 0
 

@@ -14,13 +14,13 @@ VIDEO_MEMORY equ 0xb8500
     mov ebx, %2 ; COULEUR
     mov edx, %3
     %%loop:
-        mov al, [ecx] ; caractère
+        mov al, [ecx]
         mov ah, bl 
         cmp al, 0
         je %%mdone
-        mov [edx], ax ; Affichage du caractère à l'adresse mémoire
-        add edx,2 ; +2 mémoire vidéo
-        add ecx,1 ; caractère suivant
+        mov [edx], ax
+        add edx,2
+        add ecx,1
     jmp %%loop
         %%mdone:
     popa
@@ -34,13 +34,13 @@ print_msg_32:
     mov ebx, ebx ; COULEUR
     mov edx, VIDEO_MEMORY
     print_loop:
-        mov al, [ecx] ; caractère
+        mov al, [ecx]
         mov ah, bl 
         cmp al, 0
         je done
-        mov [edx], ax ; Affichage du caractère à l'adresse mémoire
-        add edx,2 ; +2 mémoire vidéo
-        add ecx,1 ; caractère suivant
+        mov [edx], ax
+        add edx,2 
+        add ecx,1
     jmp print_loop
         done:
     ;add edx, 160

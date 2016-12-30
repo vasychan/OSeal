@@ -1,3 +1,5 @@
+; MAIN FILE FOR LOAD NOW
+
 MBALIGN     equ  1<<0                   ; align loaded modules on page boundaries
 MEMINFO     equ  1<<1                   ; provide memory map
 FLAGS       equ  MBALIGN | MEMINFO      ; this is the Multiboot 'flag' field
